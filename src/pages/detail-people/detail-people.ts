@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SwapiProvider } from '../../providers/swapi/swapi';
 
 /**
  * Generated class for the DetailPeoplePage page.
@@ -15,11 +16,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetailPeoplePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  idPerson;
+  person;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private swapiProvider: SwapiProvider) {
+      this.idPerson = navParams.get('idPeople');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetailPeoplePage');
+    console.log('ionViewDidLoad DetailPeoplePage', this.idPerson);
+    this.swapiProvider.getPeople(this.idPerson).subscribe(data => {
+      this.person = data;
+    });
   }
 
 }

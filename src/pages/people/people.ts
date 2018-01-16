@@ -34,10 +34,7 @@ export class PeoplePage {
 
   personSelected(person) {
     const idPeople = person.url.slice('https://swapi.co/api/people/'.length, -1);
-    this.swapiProvider.getPeople(idPeople).subscribe(data => {
-      console.log('People', data);
-      this.navCtrl.push(DetailPeoplePage);
-    });
+    this.navCtrl.push(DetailPeoplePage, { idPeople: idPeople });
   }
 
 }
