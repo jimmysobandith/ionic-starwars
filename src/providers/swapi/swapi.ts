@@ -20,7 +20,7 @@ export class SwapiProvider {
   listPeople() {
     let request = `${this.endPoint}/people/`;
     return this.http.get(request)
-      .map(res => res.results);
+      .map((res: any) => res.results);
   }
 
   getPeople(idPeople) {
