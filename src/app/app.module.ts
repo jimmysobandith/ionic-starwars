@@ -9,6 +9,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PeoplePageModule } from '../pages/people/people.module';
+import { DetailPeoplePageModule } from '../pages/detail-people/detail-people.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,8 @@ import { SwapiProvider } from '../providers/swapi/swapi';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
-    PeoplePageModule
+    PeoplePageModule,
+    DetailPeoplePageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SwapiProvider } from '../../providers/swapi/swapi';
+import { DetailPeoplePage } from '../detail-people/detail-people';
 
 /**
  * Generated class for the PeoplePage page.
@@ -35,6 +36,7 @@ export class PeoplePage {
     const idPeople = person.url.slice('https://swapi.co/api/people/'.length, -1);
     this.swapiProvider.getPeople(idPeople).subscribe(data => {
       console.log('People', data);
+      this.navCtrl.push(DetailPeoplePage);
     });
   }
 
