@@ -23,4 +23,9 @@ export class SwapiProvider {
       .map(res => res.results);
   }
 
+  getPeople(idPeople) {
+    let request = `${this.endPoint}/people/${idPeople}`;
+    return this.http.get(request);
+  }
+
 }
